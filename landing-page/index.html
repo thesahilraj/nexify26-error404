@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dr. Farm - Predicting the Future of Every Seed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#dfe3e6",
+                        "on-surface": "#2c2f31",
+                        "error": "#b02500",
+                        "tertiary-fixed": "#b1fedc",
+                        "surface-container-highest": "#d9dde0",
+                        "inverse-surface": "#0b0f10",
+                        "tertiary": "#17684e",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#b1fedc",
+                        "surface-tint": "#006947",
+                        "primary-container": "#69f6b8",
+                        "surface-container": "#e5e9eb",
+                        "surface-container-low": "#eef1f3",
+                        "on-primary-fixed-variant": "#006544",
+                        "primary-fixed": "#69f6b8",
+                        "on-primary": "#c8ffe0",
+                        "surface": "#f5f7f9",
+                        "error-container": "#f95630",
+                        "inverse-on-surface": "#9a9d9f",
+                        "secondary-fixed-dim": "#9ee939",
+                        "primary-dim": "#005c3d",
+                        "on-secondary": "#daffa9",
+                        "outline-variant": "#abadaf",
+                        "on-secondary-fixed-variant": "#3f6600",
+                        "tertiary-fixed-dim": "#a3efce",
+                        "on-tertiary": "#c7ffe5",
+                        "on-primary-fixed": "#00452d",
+                        "tertiary-dim": "#005b43",
+                        "secondary-container": "#acf847",
+                        "on-tertiary-fixed": "#00513b",
+                        "on-background": "#2c2f31",
+                        "primary-fixed-dim": "#58e7ab",
+                        "on-tertiary-container": "#11644b",
+                        "surface-variant": "#d9dde0",
+                        "on-secondary-fixed": "#2a4700",
+                        "on-primary-container": "#005a3c",
+                        "background": "#f5f7f9",
+                        "on-surface-variant": "#595c5e",
+                        "surface-bright": "#f5f7f9",
+                        "secondary-dim": "#365900",
+                        "secondary": "#3f6600",
+                        "primary": "#006947",
+                        "inverse-primary": "#69f6b8",
+                        "on-error": "#ffefec",
+                        "on-tertiary-fixed-variant": "#216f55",
+                        "secondary-fixed": "#acf847",
+                        "error-dim": "#b92902",
+                        "surface-dim": "#d0d5d8",
+                        "on-error-container": "#520c00",
+                        "on-secondary-container": "#375b00",
+                        "outline": "#747779"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 w-full bg-[#f5f7f9]/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_8px_24px_rgba(44,47,49,0.06)] bg-gradient-to-b from-[#eef1f3] to-transparent dark:from-slate-800">
+<div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-2 text-2xl font-black text-[#006947] dark:text-[#69f6b8] tracking-tighter">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">eco</span>
+                Dr. Farm
+            </div>
+<nav class="hidden md:flex items-center gap-6 font-['Manrope'] tracking-tight font-bold">
+<a class="text-[#006947] dark:text-[#69f6b8] border-b-2 border-[#acf847] px-1 py-2" href="#">Platform</a>
+<a class="text-[#595c5e] dark:text-slate-400 font-medium hover:bg-[#e5e9eb] dark:hover:bg-slate-800 hover:text-[#006947] rounded-full px-4 py-2 transition-all" href="#">Solutions</a>
+<a class="text-[#595c5e] dark:text-slate-400 font-medium hover:bg-[#e5e9eb] dark:hover:bg-slate-800 hover:text-[#006947] rounded-full px-4 py-2 transition-all" href="#">Resources</a>
+</nav>
+<button class="bg-primary text-on-primary rounded-full px-6 py-2.5 font-medium hover:bg-primary-dim transition-colors shadow-sm active:scale-95 duration-200 ease-in-out font-['Manrope'] tracking-tight">
+                Get Started
+            </button>
+</div>
+</header>
+<main>
+<!-- 1. Hero Section -->
+<section class="relative pt-24 pb-32 px-6 md:px-12 overflow-hidden bg-background">
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-surface-container-high/40 via-background to-background pointer-events-none"></div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+<div class="space-y-8 pr-0 lg:pr-12">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-lowest shadow-[0_4px_12px_rgba(44,47,49,0.04)] border border-outline-variant/15">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="text-sm font-label font-medium text-on-surface-variant uppercase tracking-wider">AI + IoT Agricultural Engine</span>
+</div>
+<h1 class="text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] font-headline font-extrabold tracking-tight text-on-surface">
+                        Predicting the <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container">Future of Every Seed.</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant font-body leading-relaxed max-w-2xl">
+                        Dr. Farm transforms traditional agriculture by shifting from reactive observation to predictive intelligence. We combine computer vision for early disease detection with continuous IoT soil monitoring.
+                    </p>
+<div class="flex flex-wrap items-center gap-4 pt-4">
+<button class="bg-primary text-on-primary rounded-xl px-8 py-4 font-headline font-bold text-lg hover:bg-primary-dim transition-colors shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
+                            Get Started
+                        </button>
+<button class="bg-transparent text-primary rounded-xl px-8 py-4 font-headline font-bold text-lg hover:bg-surface-container-low transition-colors">
+                            Explore Architecture
+                        </button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -inset-4 bg-gradient-to-tr from-primary/10 to-secondary-container/20 rounded-[2.5rem] blur-2xl"></div>
+<img alt="Farmer holding tablet in lush green field at sunset" class="relative rounded-[2rem] shadow-[0_24px_48px_rgba(44,47,49,0.12)] w-full h-[600px] object-cover object-center" data-alt="modern farmer using digital tablet in lush green crop field during golden hour sunset with soft flare" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtnB6u413jE2zcJfUL3-5n3zNb2enay3TI-tN3BweT459XmzU1KkA9phPWd4MtACaP9qdZwkjBJJuIZ1xmUpbcyQ_avGDmvxsMjbTGbBpW93roBEqtjm2HyqU0cDZMSQwyElNr0mN9hDv1psGjo381wnnjeqCeYStCbm4If6IT7G58q5_w9ZCbtZMVX4XuGRmbFAGlGDaOwPl8C1fUlyP4dbwFS9kr-5gG4EDNvgG-Ttgbd3fV3XfT3TSUdBL81_1sAeYHLPAmRgnm"/>
+<!-- Floating Data Card -->
+<div class="absolute bottom-8 -left-8 bg-surface-container-lowest/90 backdrop-blur-xl p-6 rounded-2xl shadow-[0_12px_32px_rgba(44,47,49,0.08)] border border-outline-variant/10 w-72">
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Field Sensor Node #04</span>
+<span class="material-symbols-outlined text-secondary text-sm">wifi</span>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="text-on-surface">Soil Moisture</span>
+<span class="text-primary font-bold">68%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[68%] rounded-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="text-on-surface">Temperature</span>
+<span class="text-primary font-bold">24°C</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[45%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. The Paradigm Shift -->
+<section class="py-24 px-6 md:px-12 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-sm font-label font-bold text-secondary uppercase tracking-widest mb-3">The Paradigm Shift</h2>
+<h3 class="text-3xl md:text-4xl font-headline font-bold text-on-surface">From Reactive to Predictive Farming</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Reactive Card -->
+<div class="bg-background rounded-3xl p-10 opacity-70">
+<div class="w-14 h-14 bg-error-container/10 rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-error-container text-3xl">warning</span>
+</div>
+<h4 class="text-xl font-headline font-bold text-on-surface mb-4">Traditional (Reactive)</h4>
+<ul class="space-y-4 text-on-surface-variant font-body">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline mt-0.5 text-xl">close</span>
+                                Visual symptoms appear late in disease cycle.
+                            </li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline mt-0.5 text-xl">close</span>
+                                Crop loss is already inevitable by detection time.
+                            </li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline mt-0.5 text-xl">close</span>
+                                Uniform chemical application wastes resources.
+                            </li>
+</ul>
+</div>
+<!-- Predictive Card -->
+<div class="bg-surface-container-lowest rounded-3xl p-10 shadow-[0_12px_32px_rgba(44,47,49,0.04)] relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full"></div>
+<div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary text-3xl">visibility</span>
+</div>
+<h4 class="text-xl font-headline font-bold text-on-surface mb-4">Dr. Farm (Predictive)</h4>
+<ul class="space-y-4 text-on-surface-variant font-body relative z-10">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5 text-xl">check_circle</span>
+                                Identifies micro-symptoms before naked eye visibility.
+                            </li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5 text-xl">check_circle</span>
+                                Early intervention prevents widespread crop loss.
+                            </li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5 text-xl">check_circle</span>
+                                Targeted treatment saves money and environment.
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. AI Disease Detection -->
+<section class="py-24 px-6 md:px-12 bg-background">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-5 space-y-8">
+<h2 class="text-sm font-label font-bold text-secondary uppercase tracking-widest">Computer Vision</h2>
+<h3 class="text-4xl lg:text-5xl font-headline font-extrabold text-on-surface leading-tight">
+                            Sub-Visual Disease Detection
+                        </h3>
+<p class="text-lg text-on-surface-variant font-body">
+                            Our proprietary CNN models analyze leaf imagery to identify specific pathogens in Rice and Wheat crops with over 94% accuracy, days before human observation.
+                        </p>
+<div class="space-y-6 pt-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">grass</span>
+</div>
+<div>
+<h5 class="font-headline font-bold text-on-surface">Rice Pathogens</h5>
+<p class="text-sm text-on-surface-variant">Leaf Blast, Brown Spot, Hispa</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">agriculture</span>
+</div>
+<div>
+<h5 class="font-headline font-bold text-on-surface">Wheat Pathogens</h5>
+<p class="text-sm text-on-surface-variant">Leaf Rust, Powdery Mildew, Septoria</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7">
+<div class="grid grid-cols-2 gap-6">
+<!-- Image Card 1 -->
+<div class="bg-surface-container-lowest rounded-3xl p-4 shadow-[0_8px_24px_rgba(44,47,49,0.06)] border border-outline-variant/10 transform translate-y-8">
+<img alt="Close up of rice leaves" class="w-full h-48 object-cover rounded-2xl mb-4" data-alt="macro photography of healthy green rice leaves with morning dew drops against soft background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5-WgBTnYdcrM-osBb24c_nXKoFMPPvnu5FhHcN6l16QGdEyb68Q1KwmWgy_Y0Y-1Cd7M82VT3Yi4m68nfERJjZ5Vefjf0FvJNBBeAVJFxBDK-jxN1pS86T54G5kxZ9x4ODIo9WwEO3mwVfVJV2o5pu4-eF0BUZxe9hl66nExkS523io1bt-nGGc08EpMPRJwbUiBasPRPgBmUaL0RSEGYvGLq2fVcGqVZ99LmDIRJcZwjn0LNugc8rMRWBHkFQnFWL3n_NwvqxBfj"/>
+<div class="flex justify-between items-center px-2">
+<span class="font-headline font-bold text-sm text-on-surface">Rice Leaf Analysis</span>
+<span class="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded-md">98.2% Confidence</span>
+</div>
+</div>
+<!-- Image Card 2 -->
+<div class="bg-surface-container-lowest rounded-3xl p-4 shadow-[0_8px_24px_rgba(44,47,49,0.06)] border border-outline-variant/10">
+<img alt="Wheat field close up" class="w-full h-48 object-cover rounded-2xl mb-4" data-alt="close up of golden wheat stalks in a field with shallow depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkernlMbfC9lhaKTUDeEQKM-3eNaGbgr2ojHPfDSkryCRVyvJ2lStmTbqHMIFZ5iVU-E0FQfv3gUIGD-J2n28vblGh1bLTTturKPJIElL5k3qWBxDRVzjKVXhmUWFe99--JhLTWavEcqbk_Ga50--AbFCaOtaQ1hnHY-Jpk-wxrUC9rO3erjbupWdZ8PMWk0MxOW_OdUKXn4H9gkDvniL1pSpts62nBsOaVHbN50n_c0W0HIVFa-6YrpIrBjK8E3RUdBmQOGTaKR-p"/>
+<div class="flex justify-between items-center px-2">
+<span class="font-headline font-bold text-sm text-on-surface">Wheat Rust Scan</span>
+<span class="text-xs font-bold text-error bg-error/10 px-2 py-1 rounded-md">Alert: Detected</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#e5e9eb] dark:bg-slate-950 w-full rounded-t-[2rem] mt-24">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 px-12 py-20 max-w-7xl mx-auto">
+<div class="space-y-4">
+<div class="text-xl font-bold text-[#006947] dark:text-[#69f6b8] flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">eco</span>
+                        Dr. Farm
+                    </div>
+<p class="font-['Inter'] text-sm leading-relaxed text-[#595c5e] dark:text-slate-400">
+                        © 2024 Dr. Farm AI. Cultivating intelligence for a sustainable future.
+                    </p>
+</div>
+<div>
+<h4 class="font-semibold text-on-surface mb-4">Product</h4>
+<ul class="space-y-2">
+<li><a class="text-[#595c5e] dark:text-slate-400 hover:text-[#3f6600] dark:hover:text-[#acf847] underline decoration-2 underline-offset-4 transition-all opacity-80 hover:opacity-100 text-sm" href="#">Platform</a></li>
+<li><a class="text-[#595c5e] dark:text-slate-400 hover:text-[#3f6600] dark:hover:text-[#acf847] underline decoration-2 underline-offset-4 transition-all opacity-80 hover:opacity-100 text-sm" href="#">Solutions</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold text-on-surface mb-4">Company</h4>
+<ul class="space-y-2">
+<li><a class="text-[#595c5e] dark:text-slate-400 hover:text-[#3f6600] dark:hover:text-[#acf847] underline decoration-2 underline-offset-4 transition-all opacity-80 hover:opacity-100 text-sm" href="#">About Us</a></li>
+<li><a class="text-[#595c5e] dark:text-slate-400 hover:text-[#3f6600] dark:hover:text-[#acf847] underline decoration-2 underline-offset-4 transition-all opacity-80 hover:opacity-100 text-sm" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold text-on-surface mb-4">Legal</h4>
+<ul class="space-y-2">
+<li><a class="text-[#595c5e] dark:text-slate-400 hover:text-[#3f6600] dark:hover:text-[#acf847] underline decoration-2 underline-offset-4 transition-all opacity-80 hover:opacity-100 text-sm" href="#">Privacy</a></li>
+<li><a class="text-[#595c5e] dark:text-slate-400 hover:text-[#3f6600] dark:hover:text-[#acf847] underline decoration-2 underline-offset-4 transition-all opacity-80 hover:opacity-100 text-sm" href="#">Resources</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</main>
+</body></html>
